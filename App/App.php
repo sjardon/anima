@@ -26,7 +26,7 @@ class App{
   public function __construct(){
     // Crear la cola de procesos.
     $request = new \App\Models\Share\Http\Request();
-    
+
     $this->run($request);
 
   }
@@ -40,7 +40,12 @@ class App{
     $life->addProcess(new \App\Life\Processes\ValidationsProcess());
     $life->addProcess(new \App\Life\Processes\ConfigProcess());
 
-    $life->run($request);
+    //Tiene que haber un proceso encargado de configurar correctamente la respuesta. O dentro de Send.
+
+    $response = $life->run($request);
+    $response->setStatus("200");
+
+    $response->send();
   }
 
 }

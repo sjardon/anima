@@ -120,7 +120,7 @@ class Route{
 	public function addValidations($validations){
 		if(is_array($validations)){
 			foreach($validations as $key => $val){
-				
+
 			}
 
 		}
@@ -188,8 +188,10 @@ class Route{
 		$routeRun = $this->getCallbackFromRequest($request);
 
 		if($routeRun){
-			$routeRun->run();
+			return $routeRun->run();
 		}
+		
+		return false;
   }
 
 }

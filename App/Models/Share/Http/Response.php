@@ -52,11 +52,16 @@ class Response{
   }
 
   public function send(){
+
     if(is_array($this->header)){
       foreach($this->header as $name => $head){
         header("$name: $head");
       }
     }
+
+    if($this->status){
+      header("HTTP/1.0 {$this->status}");
+    }
 
     echo $this->body;
   }

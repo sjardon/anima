@@ -1,5 +1,7 @@
 <?php namespace App\Controllers;
-
+
+use \App\Models\Share\Http\Response;
+
 class TestController extends \App\Controllers\AbstractController{
 
   public function index(){
@@ -7,31 +9,23 @@ class TestController extends \App\Controllers\AbstractController{
   }
 
   public function show($testId=false,$dociId=false){
-    echo "show\n";
-    var_dump($testId,$dociId);
+
+    $resp = new Response();
+    return $resp;
 
   }
 
   public function store($testId=false,$dociId=false){
-    echo "store\n";
-
-    var_dump($testId,$dociId);
-
+
+
   }
 
   public function update($testId=false,$dociId=false){
-    echo "update\n";
-
-    var_dump($testId,$dociId);
-
+
   }
 
   public function destroy($testId=false,$dociId=false){
-    echo "destroy\n";
-    
-
-    var_dump($testId,$dociId);
-
+    
 
   }
 

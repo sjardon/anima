@@ -14,12 +14,12 @@ class RouteRunDelete extends AbstractRouteRun{
     $method = "destroy";
 
     if($this->route->getParameters()){
-      call_user_func_array(
+      return call_user_func_array(
         Array($controller,$method),
         $this->route->getParametersAsArray()
       );
     }else{
-      call_user_func(Array($controller,$method));
+      return call_user_func(Array($controller,$method));
     }
   }
 

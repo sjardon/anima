@@ -34,7 +34,7 @@ class RoutesProcess extends AbstractProcess{
     if($route){
       $response = $route->run($request);
     }
-    var_dump($response);
+    
 
 
     return $response;

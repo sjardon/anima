@@ -8,11 +8,11 @@ class AuthProcess extends AbstractProcess{
 
      public function processing(\App\Models\share\Http\Request $request){
        if($request->getToken()){
-         echo $request->getToken()."<br>";
+         // echo $request->getToken()."<br>";
        }else{
-         echo "No hay token";
+         // echo "No hay token";
        }
-       
+
      }
 }
 

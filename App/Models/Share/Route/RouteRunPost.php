@@ -12,15 +12,15 @@ class RouteRunPost extends AbstractRouteRun{
 
     $method = "store";
     $ps = $this->route->getParameters();
-    
+
 
     if($this->route->getParameters()){
-      call_user_func_array(
+      return call_user_func_array(
         Array($controller,$method),
         $this->route->getParametersAsArray()
       );
     }else{
-      call_user_func(Array($controller,$method));
+      return call_user_func(Array($controller,$method));
     }
   }
 

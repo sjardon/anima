@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Life;
+
+use \App\Models\Share\Http\Request;
+use \App\Models\Share\Http\Response;
 
 //Organiza los procesos que se van a dar en la vida, recive una request y devuelve una response.
 
@@ -22,8 +25,9 @@ class Life{
       $this->processes = $process;
     }
 
-    public function run(\App\Models\share\Http\Request $request){
-      $this->processes->make($request);
+    public function run(Request $request)
+    {
+      return $this->processes->make($request);
     }
 
 }
